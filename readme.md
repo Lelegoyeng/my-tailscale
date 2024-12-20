@@ -10,5 +10,9 @@ docker exec -it <container_id> tailscale up --advertise-exit-node --hostname NAM
 ```
 
 ```
-sudo ethtool -K ens3 gro on
+sudo sysctl -w net.ipv4.ip_forward=1
+```
+
+```
+sudo sysctl -w net.ipv6.conf.all.forwarding=1
 ```
